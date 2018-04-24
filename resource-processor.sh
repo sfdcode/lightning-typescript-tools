@@ -10,4 +10,6 @@ rm dist/auraTypes.js
 
 node node_modules/lightning-typescript-tools/upload.js $(ls dist)
 
+rm -fr dist
+
 echo "FILES PROCCESED"
