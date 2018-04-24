@@ -1,0 +1,23 @@
+{
+  "name": "lightning-typescript-tools",
+  "version": "1.0.0",
+  "description": "Tooling to deploy TypeScript Lightning app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfdcode/lightning-typescript-tools.git"
+  },
+  "author": "sfdcode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sfdcode/lightning-typescript-tools/issues"
+  },
+  "dependencies": {
+    "request": "^2.83.0",
+    "xml2js": "^0.4.19"
+  },
+  "homepage": "https://github.com/sfdcode/lightning-typescript-tools#readme"
+}
