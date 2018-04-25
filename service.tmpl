@@ -1,0 +1,23 @@
+import { $A, AuraAction, AuraDescription, AuraResponse, AuraComponent, window, CommonFunctions, ICommomFunctions } from './auraTypes';
+
+//Declare local types. Very good practice to avoid type error
+/*
+interface Example{
+    Id: string;
+    Name: string;
+}
+*/
+
+window.AccountService = function(cmp: AuraComponent){
+    //LOCAL FUNCTIONS AND ATTRIBUTES HERE    
+    let commomFunctions: ICommomFunctions = CommonFunctions(cmp);
+    
+    //API PUBLIC METHODS HERE
+    return{        
+        sampleMethod: function(){
+            //Write here your code
+        }
+	};
+} 
+
+
