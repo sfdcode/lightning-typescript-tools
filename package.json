@@ -1,6 +1,6 @@
 {
   "name": "lightning-typescript-tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tooling to deploy TypeScript Lightning app",
   "main": "index.js",
   "scripts": {
