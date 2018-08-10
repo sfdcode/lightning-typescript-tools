@@ -1,6 +1,6 @@
-import { $A, AuraAction, AuraDescription, AuraResponse, AuraComponent, window, CommonFunctions, ICommomFunctions } from './auraTypes';
+import { $A, AuraAction, AuraComponent, AuraDescription, AuraResponse, CC_CommonFunctions, ICommomFunctions, window } from './CC_AuraTypes';
 
-//Declare local types. Very good practice to avoid type error
+// Declare local types. Very good practice to avoid type error
 /*
 interface Example{
     Id: string;
@@ -8,16 +8,24 @@ interface Example{
 }
 */
 
-window.AccountService = function(cmp: AuraComponent){
-    //LOCAL FUNCTIONS AND ATTRIBUTES HERE    
-    let commomFunctions: ICommomFunctions = CommonFunctions(cmp);
-    
-    //API PUBLIC METHODS HERE
-    return{        
+window.TESTTEMPLATE = function(cmp: AuraComponent) {
+    // LOCAL FUNCTIONS AND ATTRIBUTES HERE
+    let commomFunctions: ICommomFunctions = CC_CommonFunctions(cmp);
+
+    // API PUBLIC METHODS HERE
+    return{
+        /*
         sampleMethod: function(){
-            //Write here your code
+            commomFunctions.executeActionPromise('c.auramethod', {params: Object})
+                .then($A.getCallback(function(result: AuraResponse){
+                    //Declare a typed variable for the return Value
+                    let r: Example = result.getReturnValue();
+                }))
+                .catch($A.getCallback(function(error: Error){
+                    $A.reportError("error message here", error);
+                })
+            );
         }
-	};
-} 
-
-
+        */
+    };
+};
