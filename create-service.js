@@ -16,9 +16,9 @@ var rl = readline.createInterface({
 rl.on('line', function(line){    
     // fs.createReadStream('node_modules/lightning-typescript-tools/service.tmpl').pipe(fs.createWriteStream(`src/${line}.ts`));
 
-    let template = `import { $A, AuraAction, AuraDescription, AuraResponse, AuraComponent, window, CommonFunctions, ICommomFunctions } from './auraTypes';
+    let template = `import { $A, AuraAction, AuraComponent, AuraDescription, AuraResponse, CC_CommonFunctions, ICommomFunctions, window } from './CC_AuraTypes';
 
-//Declare local types. Very good practice to avoid type error
+// Declare local types. Very good practice to avoid type error
 /*
 interface Example{
     Id: string;
@@ -26,18 +26,18 @@ interface Example{
 }
 */
 
-window.${line} = function(cmp: AuraComponent){
-    //LOCAL FUNCTIONS AND ATTRIBUTES HERE    
-    let commomFunctions: ICommomFunctions = CommonFunctions(cmp);
-    
-    //API PUBLIC METHODS HERE
-    return{        
+window.${line} = function(cmp: AuraComponent) {
+    // LOCAL FUNCTIONS AND ATTRIBUTES HERE
+    let commomFunctions: ICommomFunctions = CC_CommonFunctions(cmp);
+
+    // API PUBLIC METHODS HERE
+    return{
         /*
-        sampleMethod: function(){            
-            commomFunctions.executeActionPromise('c.auramethod', {params: Object})                
+        sampleMethod: function(){
+            commomFunctions.executeActionPromise('c.auramethod', {params: Object})
                 .then($A.getCallback(function(result: AuraResponse){
                     //Declare a typed variable for the return Value
-                    let r: Example = result.getReturnValue();                    
+                    let r: Example = result.getReturnValue();
                 }))
                 .catch($A.getCallback(function(error: Error){
                     $A.reportError("error message here", error);
@@ -46,7 +46,7 @@ window.${line} = function(cmp: AuraComponent){
         }
         */
     };
-}
+};
 `;
 
     fs.writeFile(`src/${line}.ts`, template, function(e){
